@@ -14,6 +14,7 @@ public class ImButt : ButtObj, IPointerDownHandler, IPointerUpHandler {
 	public bool OK;
 
 	public void OnPointerDown(PointerEventData eventData){
+		if (Source_Name != "") SourceCon.Play (Source_Name);
 		if (!Switch) {
 			OK = true;
 			gameObject.GetComponent <Image> ().sprite = TrueIm;

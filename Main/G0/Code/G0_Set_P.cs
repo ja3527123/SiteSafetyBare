@@ -46,7 +46,6 @@ public class G0_Set_P : MonoBehaviour
         OKButt.Del += (g) =>
         {
             PlayerPrefs.SetString (Key, JsonUtility.ToJson (Game_P));
-            G0_Game_P._ = Game_P;
             SceneManager.LoadScene ("G0");
         };
 
@@ -75,7 +74,7 @@ public class G0_Set_P : MonoBehaviour
 [Serializable]
 public class G0_Game_P
 {
-    static public G0_Game_P _;
+    // static public G0_Game_P _;
 	public int Max_Time = 60;//開場時從幾秒開始倒數
 	public int [] Time_Up = new int [] {50, 50};//升級時回覆多少時間
 	public int Max_HP = 200;//健康值

@@ -24,7 +24,15 @@ public class Set_PUI : MonoBehaviour
         set
         {
             _P = value;
-            if (Text != null) Text.text = value.ToString ();
+            if (value % 1 == 0)
+            {
+                if (Text != null) Text.text = value.ToString ("0");
+            }
+            else
+            {
+                if (Text != null) Text.text = value.ToString ("0.0");
+            }
+            
             if (Del != null) Del (value);
         }
     }

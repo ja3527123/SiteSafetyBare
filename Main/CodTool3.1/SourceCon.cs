@@ -7,6 +7,7 @@ public class SourceCon : ObjArray {
 
 	void Awake () {
 		_ = this;
+		
 	}
 
 	static public void Play (string Name, float Volume = 1, float Pitch = 1) {

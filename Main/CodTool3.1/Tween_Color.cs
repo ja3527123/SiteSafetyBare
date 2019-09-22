@@ -16,7 +16,8 @@ public class Tween_Color : Tween {
 
 		Del += (f) => {
 			NowColor = From + (To - From) * f;
-			if (ColorObj != null) {
+			if (ColorObj)
+			{
 				ColorObj.color = NowColor;
 			}
 		};

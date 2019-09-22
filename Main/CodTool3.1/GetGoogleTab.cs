@@ -20,33 +20,29 @@ public class GetGoogleTab : MonoBehaviour {
 	
 	public IEnumerator GetTable (string Id, string TabName)
 	{
-		TabName = WWW.EscapeURL (TabName);
-		WWW www = new WWW (URL + "?Id=" + Id + "&Name=" + TabName);
-		yield return www;
+		// TabName = WWW.EscapeURL (TabName);
+		// WWW www = new WWW (URL + "?Id=" + Id + "&Name=" + TabName);
+		// yield return www;
 
-		if (www.error == null) {//一切正常完全沒任何錯誤
-			StringDate = www.text;
-		}
+		// if (www.error == null) {//一切正常完全沒任何錯誤
+		// 	StringDate = www.text;
+		// }
 
-		string[] _mDate = StringDate.Split ("\"" [0]);
-		List<string> L0 = new List<string> ();
-		for (int i = 0; i < _mDate.Length; i++) {
-			if (_mDate [i] != "" && _mDate [i] != ",") {
-				if (_mDate [i] == "\n") {
-					mDate.Add(L0);
-					L0 = new List<string> ();
-				} else {
-					L0.Add(_mDate [i]);
-				}
-			}
-		}
-		mDate.Add(L0);
+		// string[] _mDate = StringDate.Split ("\"" [0]);
+		// List<string> L0 = new List<string> ();
+		// for (int i = 0; i < _mDate.Length; i++) {
+		// 	if (_mDate [i] != "" && _mDate [i] != ",") {
+		// 		if (_mDate [i] == "\n") {
+		// 			mDate.Add(L0);
+		// 			L0 = new List<string> ();
+		// 		} else {
+		// 			L0.Add(_mDate [i]);
+		// 		}
+		// 	}
+		// }
+		// mDate.Add(L0);
 
-//		string[] _StringDate = StringDate.Split ("\n" [0]);
-//		Date = new string[_StringDate.Length][];
-//		for (int i = 0; i < _StringDate.Length; i++) {
-//			Date[i] = _StringDate[i].Split(',');
-//		}
+		yield return null;
 	}
 	
 

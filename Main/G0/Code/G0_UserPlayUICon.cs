@@ -81,6 +81,7 @@ public class G0_UserPlayUICon : ObjArray {
 
 		if (g.tag == "Box") {
 			if (Play_Mod.Eat_Box ()) {
+				SourceCon.Play ("Box", 0.3f, 2f);
 				g.GetComponent <G0_Box> ().End ();
 				SetTu (1);
 			}

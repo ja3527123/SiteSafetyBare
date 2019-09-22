@@ -8,7 +8,8 @@ public class G0_MainUI : MonoBehaviour {
 	static public G0_MainUI _;
 
 	[Serializable]
-	public struct _UI {
+	public struct _UI
+	{
 		public G0_UserSetUI UserSet;
 		public G0_PalyUI Play;
 		public G0_ScoreUICon Score;

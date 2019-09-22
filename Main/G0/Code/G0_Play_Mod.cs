@@ -28,6 +28,7 @@ public class G0_Play_Mod : MonoBehaviour {
 		set {
 			// int n = Game_P.Max_HP / 5;
 			if (value <= 0 && _HP > 0) {
+				SourceCon.Play ("L", 0.8f, 2f);
 				if (HPDel != null) HPDel (false);
 			} else if (value > 0 && _HP <= 0) {
 				if (HPDel != null) HPDel (true);
@@ -60,6 +61,7 @@ public class G0_Play_Mod : MonoBehaviour {
 			return _Sceore;
 		}
 		set {
+			SourceCon.Play ("Get", 0.5f, 2f);
 			PalyUI.UI.Sceor_Bar.LoadInt (value);
 			PalyUI.SpImNob (PalyUI.Now_User.transform.localPosition, LV, value - _Sceore);
 			_Sceore = value;
@@ -67,13 +69,20 @@ public class G0_Play_Mod : MonoBehaviour {
 	}
 	public int _Sceore;
 	
-	void Awake () {
-		if (G0_Game_P._ != null) {
-			Game_P = G0_Game_P._;
+	void Awake ()
+	{
+		string G0_P = PlayerPrefs.GetString ("G0_P", "");
+		if (G0_P != "")
+		{
+			Game_P = JsonUtility.FromJson <G0_Game_P> (G0_P);
 		}
+		// if (G0_Game_P._ != null) {
+		// 	Game_P = G0_Game_P._;
+		// }
 	}
 
-	void Start () {
+	void Start ()
+	{
 		SetTime (Game_P.Max_Time);
 		SetHP (Game_P.Max_HP);
 		
@@ -99,6 +108,7 @@ public class G0_Play_Mod : MonoBehaviour {
 				print ("生產升級物件");
 			}
 		}
+		SourceCon.Play ("End", 1f, 0.5f);
 		G0_MainUI._.UI.Score.Open (Sceore);
 		print ("時間到");
 	}
@@ -161,6 +171,7 @@ public class G0_Play_Mod : MonoBehaviour {
 //===============================================================================
 	public void Eat_LvUp (int n) {
 		// print (LV);
+		SourceCon.Play ("LvUp");
 		SetTime (Time + Game_P.Time_Up [LV]);
 		LV = n;
 	}
